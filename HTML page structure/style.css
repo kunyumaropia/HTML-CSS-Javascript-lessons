@@ -1,0 +1,27 @@
+nav{
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+nav a{
+    color: aqua;
+    text-decoration: none;
+    margin-right: 10px;
+}
+nav a:hover{
+    background-color:blue;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    display: inline;
+    margin-right: 10px;
+}
+img{
+    width: 200px;
+    height: 200px
+    ;
+}
