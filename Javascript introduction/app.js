@@ -35,20 +35,50 @@ switch(day) {
         document.write("Today is Tuesday");
         break;
     case 3:
-        document.write("Today is Wednesday");
+        document.write("Today is Wednesday<br>");
         break;
     case 4:
-        document.write("Today is Thursday");
+        document.write("Today is Thursday<br>");
         break;
     case 5:
-        document.write("Today is Friday");
+        document.write("Today is Friday<br>");
         break;
     case 6:
-        document.write("Today is Saturday");
+        document.write("Today is Saturday<br>");
         break;
     case 7:
-        document.write("Today is Sunday");
+        document.write("Today is Sunday<br>");
         break;
     default:
         document.write("Invalid day");
+        break;
 }
+//CONDITIONAL STATEMENT
+var a = 20;
+var b = 20;
+if (a > b) {
+    document.write("a is greater than b");
+} else if (a < b) {
+    document.write("a is less than b");
+} else {
+    document.write("a is equal to b");
+}
+//function with conditional statement
+getResults(8); // Output: 'not a nine'
+function getResults(a) {
+  var b;
+  if (a == 9) {
+    b = 'you passed a nine';
+  } else {
+    b = 'not a nine';
+  }
+  return b;
+}
+
+console.log(getResults(8)); // Output: 'not a nine'
+console.log(getResults(9)); // Output: 'you passed a nine'
+//calculation and ternary operator
+var a = 10;
+var b = 20;
+var result = (a > b) ? "a is greater than b" : "a is less than or equal to b";
+console.log(result);
