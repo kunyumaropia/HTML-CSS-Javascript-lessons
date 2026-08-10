@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f2f2f2;
+    padding: 20px;
+    background: -moz-linear-gradient();
+    overflow: hidden;
+}
+.container{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.logincard{
+    width: 100%;
+    max-width: 500px;
+    background: #1e293b;
+    padding: 80px 40px 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+.login-circle{
+    width: 90px;
+    height: 90px;
+    background: #1e293b;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+h2{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2rem;
+}
+.input-group{
+    position: relative;
+    margin-bottom: 25px;
+}
+.input-group label{
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-size: .95rem;
+}
+.input-group input{
+    width: 100%;
+    padding: 0 50px 0 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    height: 55px;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+.input-group input::placeholder{
+    background: rgba(255,255,255,0.2);
+}
+.icon{
+    position: absolute;
+    right: 15px;
+    top: 44px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: .9rem;
+}
+.options a{
+    color: #fff;
+    text-decoration: none;
+}
+.remember{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+}
+button{
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #1158c2, #0666ff);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 55px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+
+}
+button:hover{
+    transform: translateY(-3px);
+
+}
+
+@media(max-width: 768px){
+    .logincard{
+        padding: 70px 25px 30px;
+    }
+   h2{
+        font-family:1.7rem;
+    }
+}
+
+@media(max-width: 500px){
+    .logincard{
+        padding: 65px 20px 25px;
+        border-radius: 20px;
+    }
+    .logo-circle{
+        width: 75px;
+        height: 75px;
+       font-size: 1.6rem;
+       top: -35px;
+    }
+    .options{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .input-group input{
+        height: 50px;
+    }
+    button{
+        height: 50px;
+    }
+  
+}
+
