@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ATL Apartment Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--sidebar-->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>ATL Apartments</h2>
+            <p>Management System</p>
+        </div>
+
+        <nav>
+            <button onclick="showPage('dashboard')">Dashboard</button>
+            <button onclick="showPage('owner')">Owner & Property</button>
+            <button onclick="showPage('units')">Units</button>
+            <button onclick="showPage('tenants')">Tenants</button>
+            <button onclick="showPage('utilities')">Utilities</button>
+            <button onclick="showPage('bills')">Monthly Bills</button>
+        </nav>
+
+    </aside>
+
+
+    <!--main content-->
+    <main class="main-content">
+
+        <!--dashboard-->
+        <section id="dashboard" class="page">
+
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <p>ATL Apartments</p>
+            </div>
+
+
+            <!--cards-->
+            <div class="dashboard-cards">
+
+                <div class="card clickable" onclick="showDetails('income')">
+                    <h3>Total Income</h3>
+                    <p id="totalIncome">KES 0</p>
+                    <span>Click for details</span>
+                </div>
+
+                <div class="card clickable" onclick="showDetails('units')">
+                    <h3>Total Units</h3>
+                    <p id="totalUnits">0</p>
+                    <span>Click for details</span>
+                </div>
+
+                <div class="card clickable" onclick="showDetails('utilities')">
+                    <h3>Utility Income</h3>
+                    <p id="utilityIncome">KES 0</p>
+                    <span>Click for details</span>
+                </div>
+
+                <div class="card clickable" onclick="showDetails('tenants')">
+                    <h3>Active Tenants</h3>
+                    <p id="totalTenants">0</p>
+                    <span>Click for details</span>
+                </div>
+
+            </div>
+
+
+            <!--Details--> 
+            <div id="details" class="details-box">
+
+                <h2 id="detailsTitle">Detailed Information</h2>
+
+                <div id="detailsContent">
+                    Click one of the dashboard cards above.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--Owner-->
+        <section id="owner" class="page hidden">
+
+            <div class="page-header">
+                <h1>Owner & Property</h1>
+                <p>Manage apartment owner information</p>
+            </div>
+
+            <div class="form-card">
+
+                <h2>Owner Information</h2>
+
+                <form onsubmit="saveOwner(event)">
+
+                    <label>Owner Name</label>
+                    <input type="text" id="ownerName" placeholder="Lucas Maroipia" required>
+
+                    <label>Email</label>
+                    <input type="email" id="ownerEmail" placeholder="example@gmail.com" required>
+
+                    <label>Phone</label>
+                    <input type="text" id="ownerPhone" placeholder="0712345678">
+
+                    <button type="submit">Save Owner</button>
+
+                </form>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h2>Apartment Information</h2>
+
+                <p><strong>Apartment:</strong> ATL Heights</p>
+
+                <p><strong>Location:</strong> Nairobi, Kenya</p>
+
+                <p><strong>Owner:</strong> <span id="displayOwner">
+                    John Kamau
+                </span></p>
+
+            </div>
+
+        </section>
+
+
+        <!--Units-->
+        <section id="units" class="page hidden">
+
+            <div class="page-header">
+
+                <h1>Apartment Units</h1>
+
+                <button onclick="openUnitForm()" class="primary-button">
+                    + Add Unit
+                </button>
+
+            </div>
+
+
+            <!--Unit Form-->
+
+            <div id="unitForm" class="form-card hidden">
+
+                <h2>Add Apartment Unit</h2>
+
+                <form onsubmit="addUnit(event)">
+
+                    <label>Unit Number</label>
+                    <input type="text" id="unitNumber" placeholder="A101" required>
+
+                    <label>Unit Type</label>
+
+                    <select id="unitType">
+
+                        <option>Single Room</option>
+                        <option>1 Bedroom</option>
+                        <option>2 Bedroom</option>
+                        <option>3 Bedroom</option>
+
+                    </select>
+
+                    <label>Monthly Rent</label>
+                    <input type="number" id="unitRent" required>
+
+                    <button type="submit">Add Unit</button>
+
+                </form>
+
+            </div>
+
+
+            <!-- Units Table-->
+
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Unit</th>
+                            <th>Type</th>
+                            <th>Rent</th>
+                            <th>Status</th>
+                            <th>Tenant</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="unitsTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!--Tenants-->
+        <section id="tenants" class="page hidden">
+
+            <div class="page-header">
+
+                <h1>Tenant Allocation</h1>
+                <p>Allocate tenants to apartment units</p>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <h2>Allocate Tenant</h2>
+
+                <form onsubmit="addTenant(event)">
+
+                    <label>Tenant Name</label>
+                    <input type="text" id="tenantName" placeholder="Lucas Maropia" required>
+
+                    <label>Phone</label>
+                    <input type="text" id="tenantPhone" placeholder="0712345678">
+
+                    <label>Select Unit</label>
+
+                    <select id="tenantUnit" required >
+
+                    </select>
+
+                    <button type="submit">
+                        Allocate Unit
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <h2>Current Tenants</h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Unit</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tenantsTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Utilities-->
+        <section id="utilities" class="page hidden">
+
+            <div class="page-header">
+
+                <h1>Utilities</h1>
+
+                <button onclick="openUtilityForm()" class="primary-button">
+                    + Add Utility
+                </button>
+
+            </div>
+
+
+            <div id="utilityForm" class="form-card hidden">
+
+                <h2>Add Utility</h2>
+
+                <form onsubmit="addUtility(event)">
+
+                    <label>Utility Name</label>
+
+                    <input
+                        type="text"
+                        id="utilityName"
+                        placeholder="Water"
+                        required
+                    >
+
+                    <label>Monthly Cost Per Tenant</label>
+
+                    <input
+                        type="number"
+                        id="utilityCost"
+                        required
+                    >
+
+                    <button type="submit">
+                        Add Utility
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div id="utilitiesList" class="utility-list">
+
+            </div>
+
+        </section>
+
+
+        <!--Bills-->
+        <section id="bills" class="page hidden">
+
+            <div class="page-header">
+
+                <h1>Monthly Bills</h1>
+
+                <p>Generate tenant monthly bill</p>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <label>Select Tenant</label>
+
+                <select id="billTenant" onchange="generateBill()">
+
+                </select>
+
+            </div>
+
+
+            <div id="bill" class="bill-card">
+
+                <p>Select a tenant to generate a bill.</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

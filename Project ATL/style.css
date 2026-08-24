@@ -1,0 +1,454 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    background-image:url(malcolm-shadrach-_r80LCluvVM-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background-color: #172033;
+    color: white;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 25px 20px;
+    border-bottom: 1px solid #2d3748;
+}
+
+.logo h2 {
+    margin: 0;
+}
+
+.logo p {
+    margin-top: 5px;
+    color: #aab4c4;
+    font-size: 13px;
+}
+
+
+.sidebar nav {
+    padding: 20px 10px;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 5px;
+
+    background: transparent;
+    border: none;
+
+    color: #d8dee9;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+}
+
+.sidebar button:hover {
+    background-color: #26344d;
+    color: white;
+}
+.main-content {
+    margin-left: 240px;
+    padding: 30px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    color: #777;
+}
+
+.dashboard-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #666;
+    font-size: 15px;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+
+    color: #2563eb;
+}
+
+.card span {
+    color: #888;
+    font-size: 12px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    transform: translateY(-2px);
+}
+
+.details-box {
+    background: white;
+
+    margin-top: 25px;
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.form-card,
+.info-card,
+.table-card {
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.form-card {
+    max-width: 600px;
+}
+
+.form-card label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+.form-card input,
+.form-card select {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+}
+
+
+.form-card button,
+.primary-button {
+
+    margin-top: 20px;
+
+    padding: 11px 18px;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.form-card button:hover,
+.primary-button:hover {
+    background-color: #1d4ed8;
+}
+
+
+.table-card {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f7f8fa;
+
+    color: #555;
+}
+
+
+/*utilities*/
+
+.utility-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.utility-card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.utility-card h3 {
+    margin-top: 0;
+}
+
+.utility-price {
+    font-size: 24px;
+
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+
+/*Bill*/
+
+.bill-card {
+    background-color: white;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.bill-header {
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 20px;
+}
+
+.bill-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.bill-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 2px solid #333;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+/*Hidden*/
+
+.hidden {
+    display: none;
+}
+
+
+/*Mobile*/
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .utility-list {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .dashboard-cards,
+    .utility-list {
+        grid-template-columns: 1fr;
+    }
+}
+/*Print Bill*/
+
+.print-area {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.print-button {
+    background-color: #2563eb;
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.print-button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/*Print Settings*/
+
+@media print {
+
+    /* Hide everything except the bill */
+
+    body * {
+        visibility: hidden;
+    }
+
+
+    /* Show the bill */
+
+    .bill-card,
+    .bill-card * {
+        visibility: visible;
+    }
+
+
+    /* Put bill at the top of the page */
+
+    .bill-card {
+
+        position: absolute;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        box-shadow: none;
+
+        border: none;
+
+    }
+
+
+    /* Hide print button */
+
+    .print-area {
+        display: none;
+    }
+
+
+    /* Remove unnecessary background */
+
+    body {
+        background: white;
+    }
+
+}
