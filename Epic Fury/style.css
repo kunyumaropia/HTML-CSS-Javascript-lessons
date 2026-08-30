@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins';
+    cursor: pointer;
 }
 body{
     color: #333; 
@@ -195,4 +196,12 @@ img[src*="Shopping-Cart"] {
     right: 15px;
     font-size: 35px;
     cursor: pointer;
+}
+@media screen and (max-width: 360px) {
+    .product-content{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .cart {
+        width: 100%;
+    }
 }
