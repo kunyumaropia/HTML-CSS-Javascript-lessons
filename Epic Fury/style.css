@@ -24,8 +24,8 @@ header{
 .logo{
     text-decoration: none;
     font-size: 25px;
-    font-size: 600;
-    color: blue;
+    font-weight: 600;
+    color: black;
 }
 #cart-icon{
     position: relative;
